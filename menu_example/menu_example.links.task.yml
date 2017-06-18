@@ -1,0 +1,37 @@
+examples.menu_example.tabdefault:
+  route_name: examples.menu_example.tabs
+  title: 'Default Primary Tab'
+  parent_id: examples.menu_example.tabs
+
+examples.menu_example.tabOne:
+  route_name: examples.menu_example.tabname
+  title: 'two'
+  parent_id: examples.menu_example.tabs
+  weight: 2
+
+examples.menu_example.tabTwo:
+  route_name: examples.menu_example.tabnameThree
+  title: 'three'
+  parent_id: examples.menu_example.tabs
+  weight: 3
+
+examples.menu_example.tabThree:
+  route_name: examples.menu_example.tabnameFour
+  title: 'four'
+  parent_id: examples.menu_example.tabs
+  weight: 4
+
+examples.menu_example.secondaryDefault:
+  route_name: examples.menu_example.default
+  title: 'Default Secondary Tab'
+  parent_id: examples.menu_example.default
+
+examples.menu_example.secondaryDefault:
+  route_name: examples.menu_example.defaultSecond
+  title: 'Second Secondary Tab'
+  parent_id: examples.menu_example.default
+
+examples.menu_example.secondaryDefault:
+  route_name: examples.menu_example.defaultThird
+  title: 'Third Secondary Tab'
+  parent_id: examples.menu_example.default

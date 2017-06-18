@@ -1,0 +1,151 @@
+examples.menu_example:
+  path: '/examples/menu-example'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::basicInstructions'
+    _title: 'Menu Example'
+  requirements:
+    _permission: 'access content'
+
+examples.menu_example.alternate_menu:
+  path: '/examples/menu_example_alternate_menu'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::alternateMenu'
+    _title: 'Menu Example: Menu in alternate menu'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.permissioned:
+  path: '/examples/menu_example/permissioned'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::permissioned'
+    _title: 'Permissioned Example'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.permissioned_controlled:
+  path: '/examples/menu_example/permissioned/controlled'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::permissionedControlled'
+    _title: 'Permissioned Menu Item'
+  requirements:
+    _permission: 'access protected menu example'
+
+examples.menu_example.custom_access:
+  path: '/examples/menu_example/custom-access'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::customAccess'
+    _title: 'Custom Access Example'
+  requirements:
+    _permission: 'access content'
+
+examples.menu_example.path_only:
+  path: '/examples/menu_example/path-only'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::pathOnly'
+    _title: 'Menu_Callback example'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.tabs:
+  path: 'examples/menu_example/tabs'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::tabs'
+    _title: 'Tabs'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.default:
+  path: 'examples/menu_example/tabs/default'
+  deafaults:
+    _title: 'deafault primary tab'
+    requirements:
+      _access: 'TRUE'
+
+examples.menu_example.tabname:
+  path: 'examples/menu_example/tabs/second'
+  defaults:
+    _title: 'second'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::tabNameSecond'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.tabnameThree:
+  path: 'examples/menu_example/tabs/third'
+  defaults:
+    _title: 'third'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::tabNameThird'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.tabnameFour:
+  path: 'examples/menu_example/tabs/forth'
+  defaults:
+    _title: 'four'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::tabNameForth'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.defaultSecond:
+  path: 'examples/menu_example/tabs/default/Second'
+  defaults:
+    _title: 'Second Secondary tab'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::defaultSecond'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.defaultThird:
+  path: 'examples/menu_example/tabs/default/third'
+  defaults:
+    _title: 'Third secondary tab'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::defaultThird'
+  requirements:
+    _access: 'TRUE'
+
+example.menu_example.use_url_arguments:
+  path: 'examples/menu_example/use-url-arguments'
+  defaults:
+    _title: 'Extra Agruments'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::urlArgument'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.title_callbacks:
+  path: 'examples/menu_example/title-callbacks'
+  defaults:
+    _title_callback: 'Drupal\menu_example\Controller\MenuExampleController::backTitle'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::titleCallback'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.placeholder_argument:
+  path: 'examples/menu_example/placeholder-argument'
+  defaults:
+    _title: 'Placeholder Arguments'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::argument'
+  requirements:
+    _access: 'TRUE'
+
+examples.menu_example.placeholder_argument.display:
+  path: 'examples/menu_example/placeholder-argument/{node}/display'
+  defaults:
+    _title: 'Placeholder Arguments'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::display'
+  requirements:
+     _access: 'TRUE'
+
+examples.menu_example.default_arg.arg_optional:
+  path: 'examples/menu_example/default-arg/{no}'
+  defaults:
+    _title: 'Processed Placeholder Arguments'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::argOptional'
+     upcast: ''
+  requirements:
+    _access: 'TRUE'
+
+example.menu_example.menu_original_path:
+  path: 'examples/menu_example/menu_original_path'
+  defaults:
+    _title: 'Menu path that will be altered by hook_menu_alter()'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::orginalPath'
+  requirements:
+    _access: 'TRUE'
