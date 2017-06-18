@@ -143,8 +143,26 @@ class MenuExampleController extends ControllerBase {
     $urle = Url::fromUri('internal:/examples/menu_example/use-url-arguments/one/two');
     $linker = Link::fromTextAndUrl($this->t('examples/menu_example/use-url-arguments/one/two'), $urle)->toString();
     return [
-      '#markup' => $this->t('This page demonstrates using arguments in the path (portions of the path after "menu_example/use-url-arguments". For example, access it with @link or @linker', ['@link' => $link], ['@linker' => $linker]),
+      '#markup' => $this->t('This page demonstrates using arguments in the path (portions of the path after "menu_example/use-url-arguments". For example, access it with @link or @linker', ['@link' => $link , '@linker' => $linker]),
 
+    ];
+  }
+
+/**
+   *
+   */
+  public function urlArgument1($arg1 = '') {
+    return [
+      '#markup' => $this->t('Argument1 = @arg1', ['@arg1' => $arg1]),
+    ];
+  }
+
+  /**
+   *
+   */
+  public function urlArgument2($arg1 , $arg2) {
+    return [
+      '#markup' => $this->t('Argument1 = @arg1 , Argument2 = @arg2', ['@arg1' => $arg1 , '@arg2' => $arg2]),
     ];
   }
 
@@ -192,6 +210,12 @@ class MenuExampleController extends ControllerBase {
 
   }
 
+  public function orginalPath() {
+    return [
+      '#markup' => $this->t('This menu item was created strictly to allow the hook_menu_alter() function to have something to operate on.hook_menu defined the path as examples/menu_example/menu_original_path. The hook_menu_alter() changes it to examples/menu_example/menu_altered_path. You can try navigating to both paths and see what happens!'),
+    ];
+  }
+
   /**
    *
 
@@ -224,9 +248,6 @@ class MenuExampleController extends ControllerBase {
   /**
    *
    */
-  public function orginalPath() {
-    return [
-      '#markup' => t('This menu item was created strictly to allow the hook_menu_alter() function to have something to operate on.hook_menu defined the path as examples/menu_example/menu_original_path. The hook_menu_alter() changes it to examples/menu_example/menu_altered_path. You can try navigating to both paths and see what happens!'
-    ];
-  }
+
+
 }

@@ -109,6 +109,22 @@ example.menu_example.use_url_arguments:
   requirements:
     _access: 'TRUE'
 
+example.menu_example.use_url_arguments1:
+  path: 'examples/menu_example/use-url-arguments/{arg1}'
+  defaults:
+    _title: 'Extra Agruments'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::urlArgument1'
+  requirements:
+    _access: 'TRUE'
+
+example.menu_example.use_url_arguments2:
+  path: 'examples/menu_example/use-url-arguments/{arg1}/{arg2}'
+  defaults:
+    _title: 'Extra Agruments'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::urlArgument2'
+  requirements:
+    _access: 'TRUE'
+
 examples.menu_example.title_callbacks:
   path: 'examples/menu_example/title-callbacks'
   defaults:
@@ -133,15 +149,6 @@ examples.menu_example.placeholder_argument.display:
   requirements:
      _access: 'TRUE'
 
-examples.menu_example.default_arg.arg_optional:
-  path: 'examples/menu_example/default-arg/{no}'
-  defaults:
-    _title: 'Processed Placeholder Arguments'
-    _controller: '\Drupal\menu_example\Controller\MenuExampleController::argOptional'
-     upcast: ''
-  requirements:
-    _access: 'TRUE'
-
 example.menu_example.menu_original_path:
   path: 'examples/menu_example/menu_original_path'
   defaults:
@@ -149,3 +156,5 @@ example.menu_example.menu_original_path:
     _controller: '\Drupal\menu_example\Controller\MenuExampleController::orginalPath'
   requirements:
     _access: 'TRUE'
+
+
