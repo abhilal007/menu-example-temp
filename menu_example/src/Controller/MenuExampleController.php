@@ -223,6 +223,31 @@ class MenuExampleController extends ControllerBase {
       ];
     }
 
+   public function argOptional($no = '') {
+    $mapped_value = NULL;
+    static $mappings = [
+      1 => 'one',
+      2 => 'two',
+      3 => 'three',
+      99 => 'jackpot! default',
+    ];
+    if (isset($mappings[$no])) {
+      $mapped_value = $mappings[$no];
+    }
+   if (!empty($mapped_value)) {
+      return [
+        '#markup' => $this->t('Loaded value was @loaded', ['@loaded' => $mapped_value]),
+      ];
+    }
+    else {
+      return [
+        '#markup' => $this->t('Sorry, the id @id was not found to be loaded', ['@id' => $no]),
+      ];
+    }
+
+  }
+
+
 }
 
   /**
