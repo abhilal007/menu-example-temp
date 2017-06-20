@@ -46,6 +46,14 @@ examples.menu_example.path_only:
   requirements:
     _access: 'TRUE'
 
+examples.menu_example.callback:
+  path: '/examples/menu_example/path-only/callback'
+  defaults:
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::pathOnlycallback'
+    _title: 'Callback only'
+  requirements:
+    _access: 'TRUE'
+
 examples.menu_example.tabs:
   path: 'examples/menu_example/tabs'
   defaults:
@@ -57,14 +65,14 @@ examples.menu_example.tabs:
 examples.menu_example.default:
   path: 'examples/menu_example/tabs/default'
   deafaults:
-    _title: 'deafault primary tab'
+    _title: 'Tabs'
     requirements:
       _access: 'TRUE'
 
 examples.menu_example.tabname:
   path: 'examples/menu_example/tabs/second'
   defaults:
-    _title: 'second'
+    _title: 'Tabs'
     _controller: '\Drupal\menu_example\Controller\MenuExampleController::tabNameSecond'
   requirements:
     _access: 'TRUE'
@@ -72,7 +80,7 @@ examples.menu_example.tabname:
 examples.menu_example.tabnameThree:
   path: 'examples/menu_example/tabs/third'
   defaults:
-    _title: 'third'
+    _title: 'Tabs'
     _controller: '\Drupal\menu_example\Controller\MenuExampleController::tabNameThird'
   requirements:
     _access: 'TRUE'
@@ -80,7 +88,7 @@ examples.menu_example.tabnameThree:
 examples.menu_example.tabnameFour:
   path: 'examples/menu_example/tabs/forth'
   defaults:
-    _title: 'four'
+    _title: 'Tabs'
     _controller: '\Drupal\menu_example\Controller\MenuExampleController::tabNameForth'
   requirements:
     _access: 'TRUE'
@@ -88,7 +96,7 @@ examples.menu_example.tabnameFour:
 examples.menu_example.defaultSecond:
   path: 'examples/menu_example/tabs/default/Second'
   defaults:
-    _title: 'Second Secondary tab'
+    _title: 'Tabs'
     _controller: '\Drupal\menu_example\Controller\MenuExampleController::defaultSecond'
   requirements:
     _access: 'TRUE'
@@ -96,7 +104,7 @@ examples.menu_example.defaultSecond:
 examples.menu_example.defaultThird:
   path: 'examples/menu_example/tabs/default/third'
   defaults:
-    _title: 'Third secondary tab'
+    _title: 'Tabs'
     _controller: '\Drupal\menu_example\Controller\MenuExampleController::defaultThird'
   requirements:
     _access: 'TRUE'
@@ -156,5 +164,4 @@ example.menu_example.menu_original_path:
     _controller: '\Drupal\menu_example\Controller\MenuExampleController::orginalPath'
   requirements:
     _access: 'TRUE'
-
 

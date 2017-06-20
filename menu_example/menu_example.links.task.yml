@@ -1,37 +1,41 @@
-examples.menu_example.tabdefault:
+examples.menu_example.tabs:
   route_name: examples.menu_example.tabs
   title: 'Default Primary Tab'
-  parent_id: examples.menu_example.tabs
+  base_route: examples.menu_example.tabs
+  weight: 1
 
 examples.menu_example.tabOne:
   route_name: examples.menu_example.tabname
   title: 'two'
-  parent_id: examples.menu_example.tabs
+  base_route: examples.menu_example.tabs
   weight: 2
 
 examples.menu_example.tabTwo:
   route_name: examples.menu_example.tabnameThree
   title: 'three'
-  parent_id: examples.menu_example.tabs
+  base_route: examples.menu_example.tabs
   weight: 3
 
 examples.menu_example.tabThree:
   route_name: examples.menu_example.tabnameFour
   title: 'four'
-  parent_id: examples.menu_example.tabs
+  base_route: examples.menu_example.tabs
   weight: 4
 
 examples.menu_example.secondaryDefault:
-  route_name: examples.menu_example.default
+  route_name: examples.menu_example.tabs
   title: 'Default Secondary Tab'
-  parent_id: examples.menu_example.default
+  parent_id: examples.menu_example.tabs
+  weight: 1
 
-examples.menu_example.secondaryDefault:
+examples.menu_example.secondaryDefaultOne:
   route_name: examples.menu_example.defaultSecond
   title: 'Second Secondary Tab'
-  parent_id: examples.menu_example.default
+  parent_id: examples.menu_example.tabs
+  weight: 2
 
-examples.menu_example.secondaryDefault:
+examples.menu_example.secondaryDefaultTwo:
   route_name: examples.menu_example.defaultThird
   title: 'Third Secondary Tab'
-  parent_id: examples.menu_example.default
+  parent_id: examples.menu_example.tabs
+  weight: 3

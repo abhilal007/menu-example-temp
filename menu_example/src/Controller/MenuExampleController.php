@@ -180,12 +180,13 @@ class MenuExampleController extends ControllerBase {
    */
   public function backTitle($title = '') {
     // Pass your uid.
-    $title = \Drupal::currentUser()->id();
+    $user = \Drupal::currentUser();
+    $title = $user->getDisplayName();
     // $title = $account->getUsername()->toString();
     // $account = \Drupal::currentUser()->id();
     // $title=$account->get('name')->value;
     return [
-      '#markup' => $this->t('@title', ['@title' => $title]),
+      '#markup' => $this->t('Dynamic Title: username = @title', ['@title' => $title]),
     ];
   }
 
@@ -216,38 +217,17 @@ class MenuExampleController extends ControllerBase {
     ];
   }
 
-  /**
-   *
-
-  public function argOptional($no = '') {
-    if (empty($no) || $arg == '%') ? 99 : $arg;
-    $mapped_value = NULL;
-    static $mappings = [
-      1 => 'one',
-      2 => 'two',
-      3 => 'three',
-      99 => 'jackpot! default',
-    ];
-    if (isset($mappings[$id])) {
-      $mapped_value = $mappings[$no];
-    }
-    $mapped_value = _menu_example_mappings($no);
-    if (!empty($mapped_value)) {
-      return [
-        '#markup' => $this->t('Loaded value was @loaded', ['@loaded' => $mapped_value]),
-      ];
-    }
-    else {
-      return [
-        '#markup' => $this->t('Sorry, the id @id was not found to be loaded', ['@id' => $no]),
+  public function pathOnlycallback() {
+    return [
+      '#markup' => $this->t('The menu entry for this page is of type MENU_CALLBACK, so it provides only a path but not a link in the menu links, but it is the same in every other way to the simplest example.'),
       ];
     }
 
-  }*/
+}
 
   /**
    *
    */
 
 
-}
+
