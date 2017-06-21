@@ -5,7 +5,8 @@ namespace Drupal\menu_example\Controller;
 use Drupal\Core\Controller\ControllerBase;
 use Drupal\Core\Link;
 use Drupal\Core\Url;
-
+use Drupal\Core\Access\AccessResult;
+use Drupal\Core\Session\AccountInterface;
 /**
  * Controller routines for menu example routes.
  */
@@ -247,7 +248,18 @@ class MenuExampleController extends ControllerBase {
 
   }
 
+  public function customAccessPage() {
+    return array(
+      '#markup' => $this-> t('This menu entry will not be visible and access will result
+        in a 403 error unless the user has the "authenticated" role. This is
+        accomplished with a custom access callback.'),
+    );
+  }
 
+public function getRole(AccountInterface $account){
+
+  return AccessResult::allowedIf($account->hasPermission('authenticated')) ;
+}
 }
 
   /**
