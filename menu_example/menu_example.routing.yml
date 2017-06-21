@@ -39,7 +39,7 @@ examples.menu_example.custom_access:
     _permission: 'access content'
 
 examples.menu_example.custom_access_page:
-  path: '/examples/menu_example/custom-access/page'
+  path: '/examples/menu_example/custom-access-page'
   defaults:
     _content: '\Drupal\menu_example\Controller\MenuExampleController::customAccessPage'
     _title: 'Custom Access Menu Item'

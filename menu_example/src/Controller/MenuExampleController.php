@@ -63,8 +63,8 @@ class MenuExampleController extends ControllerBase {
    *
    */
   public function customAccess() {
-    $url = Url::fromUri('internal:/examples/menu_example/custom-access/page');
-    $link = Link::fromTextAndUrl($this->t('examples/menu_example/custom-access/page'), $url)->toString();
+    $url = Url::fromUri('internal:/examples/menu_example/custom-access-page');
+    $link = Link::fromTextAndUrl($this->t('examples/menu_example/custom-access-page'), $url)->toString();
     return [
       '#markup' => $this->t('A menu item that requires the user to posess a role of "authenticated" is at @link', ['@link' => $link]),
     ];
