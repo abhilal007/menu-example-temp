@@ -41,7 +41,7 @@ examples.menu_example.custom_access:
 examples.menu_example.custom_access_page:
   path: '/examples/menu_example/custom-access-page'
   defaults:
-    _content: '\Drupal\menu_example\Controller\MenuExampleController::customAccessPage'
+    _controller: '\Drupal\menu_example\Controller\MenuExampleController::customAccessPage'
     _title: 'Custom Access Menu Item'
   requirements:
     _custom_access: '\Drupal\menu_example\Controller\MenuExampleController::getRole'
